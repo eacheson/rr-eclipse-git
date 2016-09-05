@@ -92,10 +92,24 @@ About the **Git Staging** window:
 
 We will now modify an existing file locally, and use these windows to make a 'Commit and Push'.
 
-1. In the 'Git Repositories' window, right-click on the `rr-eclipse-git` project and select 'Pull'. Click ok the status message that appears, telling you whether anything was downloaded from the remote repository to your local machine.
+1. In the 'Git Repositories' window, right-click on the `rr-eclipse-git` project and select 'Pull'. Click ok the status message that appears, telling you whether anything was downloaded from the remote repository to your local machine. This is really important to do because others will be editing this file too during this tutorial, so you want to get the latest version! Make sure you complete steps 2-6 in about a minute after you do the 'Pull' to minimize the chance of someone having updated the file exactly between your 'Pull' and your 'Push'.
 2. In the Eclipse 'Project Explorer' on the left, expand the `rr-eclipse-git` project and double-click on the file 'names.txt' to open it in the Editor window.
-3. Add your GitHub username to this file on a new line and save the change.
+3. Add your GitHub username to this file on a new line and save the change (e.g. by pressing Ctrl-S).
 4. Now go the the 'Git Staging' window discussed above, press Refresh, and drag the 'names.txt' file (only this file) from the 'Unstaged Changes' area to the 'Staged Changes' area.
 5. In the 'Commit Message' area, write a short descriptive summary of your changes, like "added GitHub username to list"
 6. Ensure your 'Author' and 'Committer' fields are filled with your username and e-mail, and click the 'Commit and Push' button to get your changes to GitHub!
 
+Hopefully now you get a nice message that everything went well! :D
+
+## Conclusion
+
+This tutorial focused on a simple use case where you are not expecting others to be editing the same file at the same time. You can use the workflow above to version control your own project, and also to collaborate with someone on a project. Where this simple workflow is not adequate is when you are collaborating with multiple people at the same time on a project, where they may be changing the same files at the same time as you. Git is built for these more complex situations, through [branching and merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging), which are beyond the scope of this tutorial, but well integrated into Eclipse and EGit.
+
+Next time someone points you to a GitHub repository for project code and documentation, why not import the project into Eclipse and see if you can follow their instructions and get their code to run?
+
+## Useful links
+
+- [EclipseSource EGit tutorial](http://eclipsesource.com/blogs/tutorials/egit-tutorial/): good tutorial about using EGit
+- [Git version control with Eclipse (EGit)](http://www.vogella.com/tutorials/EclipseGit/article.html): a longer tutorial on EGit which documents many more possible workflows
+- [GitHub free student account](https://education.github.com/pack): apply for a free student account at GitHub so that you can also create private repos for free.
+- [Git: Basic branching and merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging): official Git documentation about branching and merging.
