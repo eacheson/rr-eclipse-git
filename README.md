@@ -91,6 +91,7 @@ About the **Git Staging** window:
 - To prepare a commit, files from this area need to be selected and dragged down to the 'Staged Changes' area below. Once dragged, these files are staged and ready to be committed. The message to describe the commit gets written in the 'Commit Message' area, and you commit your changes using one of the buttons at the bottom. 'Commit and Push' is what I normally use for solo projects and what we will use next; 'push' means to send your changes to the remote repository, i.e. in our case on GitHub where others can see the changes also.
 
 We will now modify an existing file locally, and use these windows to make a 'Commit and Push'.
+
 1. In the 'Git Repositories' window, right-click on the `rr-eclipse-git` project and select 'Pull'. Click ok the status message that appears, telling you whether anything was downloaded from the remote repository to your local machine.
 2. In the Eclipse 'Project Explorer' on the left, expand the `rr-eclipse-git` project and double-click on the file 'names.txt' to open it in the Editor window.
 3. Add your GitHub username to this file on a new line and save the change.
