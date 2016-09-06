@@ -32,7 +32,7 @@ There are a few ways you can create a version controlled project to use with Ecl
 
 **1. _(Optional)_ Create a new (public or private) repo on github:** This step is optional but a good idea if you are currently working on a project you want to version control. The rest of the tutorial will use an existing repo we created for this tutorial.
 
-  Creating your own GitHub repo is simply a matter of filling out one screen. Login to your GitHub account and create a new GitHub repository [at this link](https://github.com/new). Give your new repository a short and memorable name, ideally using lowercase letters only and dashes to separate words, e.g. `rr-eclipse-git`, and check the option to initialize this repository with a README:
+  Creating your own GitHub repo is simply a matter of filling out one screen. Login to your GitHub account and create a new GitHub repository [at this link](https://github.com/new). Give your new repository a short and memorable name, ideally using lowercase letters only and dashes to separate words, e.g. `rr-eclipse-git`. Check the option to initialize this repository with a README, and optionally choose a license for your project.
 
   **Note:** Public repos are always free, and private repos are free when you get a free student account, and otherwise you currently have to pay $7/month to get unlimited private repos. Applying for a [free student account](https://education.github.com/pack) is highly recommended! (It will probably take several days before you get your application approved.)
 
@@ -42,7 +42,7 @@ There are a few ways you can create a version controlled project to use with Ecl
   You've just created a repo which is 'hosted' by GitHub - it's still only online for now.
 
 **2. Clone the repo:** To get the contents of a remote repository onto your own computer, i.e. to get a 'local' copy, you have to "Clone or download" it. There are a few options here (clone or download? HTTPS or SSH? etc.) but to keep things simple, we will use **Clone** with **HTTPS**. We will use the existing tutorial repo for this step, but you could also use your own repo if you created on in Step 1 above.
-  1. Go to the repo homepage at [github.com/eacheson/rr-eclipse-git](https://github.com/eacheson/rr-eclipse-git)
+  1. Go to the repo homepage at [github.com/eacheson/rr-eclipse-git](https://github.com/eacheson/rr-eclipse-git) (notice the URL pattern for the repo homepage: `github.com/username/repo-name`, where `username` is the repo creator's username)
   2. Click the green 'Clone or download' button
   3. A menu appears, which should say 'Clone with HTTPS'; if it instead says 'Clone with SSH', click on 'Use HTTPS'
   4. Click on the copy-to-clipboard button
@@ -68,15 +68,19 @@ There are a few ways you can create a version controlled project to use with Ecl
  
 That's it! The project should now be on your local machine, and visible in Eclipse in the 'Project Explorer'. If you don't see this window on the left side, make it visible by clicking on 'Window > Show View > Project Explorer'.  
 
-## Part 3: Interact with the repo from Eclipse
+## Part 3: Get to know EGit
 
-In this part, you will used Eclipse to make changes to a file in your 'local'  repo and then to 'commit' the changes to the remote repository.
+In this part, you will become familiar with the EGit windows, how to set them up, and what they are used for.
 
 First of all, make the 'Git Repositories' and the 'Git Staging' windows visible:
   1. 'Window > Show View > Other...'
   2. Expand 'Git' (click on the little arrow on the left) and choose 'Git Repositories' and 'Git Staging', then click Ok.
   
     *Tip*: A setup I personally like in Eclipse is to have Project Explorer on the left, Git Repositories/Git Staging/Outline on the right (tabbed), the main editor in the middle, and the Console/History/Javadoc/other below the main editor.
+
+    Here is a screenshot of the 'Git Staging' window in Eclipse, with the 'Git Repositories' window tabbed behind it.
+    
+    ![Git Staging window](figures/egit-windows.png)
 
 About the **Git Repositories** window:
 - This window shows a list of versioned controlled repositories that you have imported into Eclipse, or created within Eclipse. Right-clicking on a repository within this window gives you many useful options to manage and work with the repository, like 'Pull' to get any news changes from the remote repo into your local copy.
@@ -88,9 +92,15 @@ About the **Git Staging** window:
 
   ![EGit: refresh for staging area](figures/egit-refresh.png)
   
-- To prepare a commit, files from this area need to be selected and dragged down to the 'Staged Changes' area below. Once dragged, these files are staged and ready to be committed. The message to describe the commit gets written in the 'Commit Message' area, and you commit your changes using one of the buttons at the bottom. 'Commit and Push' is what I normally use for solo projects and what we will use next; 'push' means to send your changes to the remote repository, i.e. in our case on GitHub where others can see the changes also.
+- To prepare a commit, files from this 'Unstaged Changes' area need to be selected and dragged down to the 'Staged Changes' area below (like an 'add' command in Git). Once dragged, these files are staged and ready to be committed. The message to describe the commit gets written in the 'Commit Message' area, and you commit your changes using one of the buttons at the bottom. 'Commit and Push' is what I normally use for solo projects and what we will use in the next part; 'commit' means your changes get saved in your local repository and 'push' means your changes get sent to the remote repository, i.e. in our case on GitHub where others can see the changes also.
 
-We will now modify an existing file locally, and use these windows to make a 'Commit and Push'.
+Here is a helpful diagram of the transport model in Git - focus for now on the top commands which are what we see graphical in our staging windows: add, commit, push.
+
+![Git transport model](figures/git-transport.png)
+
+## Part 4: Use EGit to track a change
+
+We will now modify an existing file locally, and use the EGit windows to make a 'Commit and Push'.
 
 1. In the 'Git Repositories' window, right-click on the `rr-eclipse-git` project and select 'Pull'. Click ok the status message that appears, telling you whether anything was downloaded from the remote repository to your local machine. This is really important to do because others will be editing this file too during this tutorial, so you want to get the latest version! Make sure you complete steps 2-6 in about a minute after you do the 'Pull' to minimize the chance of someone having updated the file exactly between your 'Pull' and your 'Push'.
 2. In the Eclipse 'Project Explorer' on the left, expand the `rr-eclipse-git` project and double-click on the file 'names.txt' to open it in the Editor window.
